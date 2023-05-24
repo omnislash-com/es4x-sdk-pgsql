@@ -1,0 +1,27 @@
+{
+	"config": {
+		"host": "127.0.0.1",
+		"port": 5432,
+		"user": "login",
+		"password": "password",
+		"db": "mydatabase"
+	},
+	"tests": {
+		"SelectRow": {
+			"tables": [
+				"tablename"
+			],
+			"fields": [
+				"column1",
+				"column2"
+			],
+			"conditions": [
+				"column=$value"
+			],
+			"tests": {
+				"column1": 1,
+				"column2": "value2"
+			}
+		}
+	}
+}
