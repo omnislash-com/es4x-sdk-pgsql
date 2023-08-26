@@ -1,7 +1,7 @@
 {
 	"name": "es4x-sdk-pgsql",
 	"displayName": "ES4X PostgreSQL SDK",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "SDK for PostgreSQL for the ES4X Runtime.",
 	"main": "index.js",
 	"keywords": ["es4x", "javascript", "vertex", "postgresql"],

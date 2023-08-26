@@ -145,7 +145,7 @@ class	PGDBQuery
 		if (_conditions.length > 0)
 		{
 			// rebuild the conditions for the prepared query
-			let	delimiters = [">=", "<=", "<>", "=", "LIKE", ">", "<", "IN"];
+			let	delimiters = [">=", "<=", "<>", "=", "LIKE", ">", "<", "IN", "NOT IN"];
 			let	preparedQueryCondition = [];
 			for(let i=0; i<_conditions.length; i++)
 			{
@@ -162,7 +162,7 @@ class	PGDBQuery
 						let	newCondition = chunks[0];
 
 						// IN type of condition?
-						if (delimiters[j] == "IN")
+						if ( (delimiters[j] == "IN") || (delimiters[j] == "NOT IN") )
 						{
 							// extract all the values
 							let	inValues = chunks[1].split(" | ");
@@ -170,7 +170,7 @@ class	PGDBQuery
 								inValues.push(0);
 
 							// build the final list
-							newCondition += " IN (";
+							newCondition += " " + delimiters[j] + " (";
 							for(let k=0; k<inValues.length; k++)
 							{
 								// add it as the prepared
