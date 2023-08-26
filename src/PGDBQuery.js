@@ -145,7 +145,7 @@ class	PGDBQuery
 		if (_conditions.length > 0)
 		{
 			// rebuild the conditions for the prepared query
-			let	delimiters = [">=", "<=", "<>", "=", "LIKE", ">", "<", "IN", "NOT IN"];
+			let	delimiters = [">=", "<=", "<>", "=", "LIKE", ">", "<", "NOT IN", "IN"];
 			let	preparedQueryCondition = [];
 			for(let i=0; i<_conditions.length; i++)
 			{
